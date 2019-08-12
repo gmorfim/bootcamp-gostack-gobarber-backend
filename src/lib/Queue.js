@@ -29,7 +29,7 @@ class Queue {
   processQueue() {
     jobs.forEach(job => {
       const { bee, handle } = this.queues[job.key];
-
+      // bee.on('evento') escuta tal evento.. o bee tem uma série de eventos para ser escutados exemplos: succeded, error, retrying, ready, progress e etc...
       bee.on('failed', this.handleFailure).process(handle);
     });
   }

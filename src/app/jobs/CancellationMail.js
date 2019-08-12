@@ -4,9 +4,11 @@ import Mail from '../../lib/Mail';
 
 class CancellationMail {
   get key() {
+    // para cada job precisa-se de uma chave única
     return 'CancellationMail';
   }
 
+  // tarefa que vai executar quando esse processo for executado ( vai ser uma fila, vai ser chamado para o envio de email)
   async handle({ data }) {
     const { appointment } = data;
 
